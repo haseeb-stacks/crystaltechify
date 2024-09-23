@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+    DirectorySlash Off
+    RewriteEngine On
+  
+    # Skip the rewrite rule for requests to assets folder
+    RewriteCond %{REQUEST_URI} !^/assets/
+  
+    # Rewrite all other requests to the public directory
+    RewriteRule ^(.*)$ public/$1 [L]
+  </IfModule>
